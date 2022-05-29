@@ -1,0 +1,36 @@
+{
+  "name": "cypress-e2e-banco-atl-s",
+  "version": "1.0.0",
+  "description": "Cypress e2e tests example",
+  "main": "index.js",
+  "scripts": {
+    "test": "Test",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:example": "cypress run --spec 'cypress/integration/2-advanced-examples/network_requests.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanbs9/cypress-e2e-banco-atl-s.git"
+  },
+  "keywords": [
+    "cypress",
+    "test",
+    "e2e"
+  ],
+  "author": "Jonathan Brull Schroeder",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonathanbs9/cypress-e2e-banco-atl-s/issues"
+  },
+  "homepage": "https://github.com/jonathanbs9/cypress-e2e-banco-atl-s#readme",
+  "devDependencies": {
+    "cypress": "^9.7.0",
+    "cypress-multi-reporters": "^1.6.0",
+    "mocha": "^10.0.0",
+    "mocha-junit-reporter": "^2.0.2",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
