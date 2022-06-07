@@ -6,7 +6,7 @@
   "scripts": {
     "test": "Test",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
+    "cypress:run": "npx cypress run",
     "cypress:run:example": "cypress run --spec cypress/integration/2-advanced-examples/network_requests.spec.js",
     "npx:example": "npx cypress run --spec cypress/integration/2-advanced-examples/network_requests.spec.js"
   },
