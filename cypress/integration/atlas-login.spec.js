@@ -20,7 +20,7 @@ describe("Should enter Login Page", () => {
 
   it("Should Logout Successfully", () => {
     spa.clickAvatarAndLogout();
-    login.getURL.should("eq", Cypress.env("LOGIN_URL_DEV") + "login");
+    login.getURL.should("eq", Cypress.env("LOGIN_URL_QA") + "login");
     login.getTitlePageText.should("contains", "Ingresar | ");
   });
 
