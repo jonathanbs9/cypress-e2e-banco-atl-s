@@ -7,8 +7,8 @@
     "test": "Test",
     "cypress:open": "cypress open",
     "cypress:run": "npx cypress run",
-    "cypress:run:example": "cypress run --spec cypress/integration/2-advanced-examples/network_requests.spec.js",
-    "npx:example": "npx cypress run --spec cypress/integration/2-advanced-examples/network_requests.spec.js",
+    "cypress:run:example": "cypress run --spec cypress/e2e/2-advanced-examples/network_requests.cy.js",
+    "npx:example": "npx cypress run --spec cypress/e2e/2-advanced-examples/network_requests.cy.js",
     "test:login": "npx cypress run --spec cypress/e2e/atlas-login.cy.js"
   },
   "repository": {
