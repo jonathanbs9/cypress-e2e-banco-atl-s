@@ -10,15 +10,16 @@ describe("Should enter Login Page", () => {
     login.navigate();
     const username = Cypress.env("USERNAME_DEV");
     const password = Cypress.env("PASS_DEV");
-    login.login(username, password);
+    //login.login(username, password);
+    cy.Login(username, password);
   });
 
-  it("Should Login Successfully", () => {
+  it.only("Should Login Successfully", () => {
     spa.getAgendaTitle.should("contain", "Agenda");
     spa.getCTATitle.should("contain", "CTAs");
   });
 
-  it("Should Logout Successfully", () => {
+  it.only("Should Logout Successfully", () => {
     spa.clickAvatarAndLogout();
     login.getURL.should("eq", Cypress.env("LOGIN_URL_QA") + "login");
     login.getTitlePageText.should("contains", "Ingresar | ");
@@ -27,7 +28,7 @@ describe("Should enter Login Page", () => {
   it("Should Not Login with Wrong credentials - API", () => {
     cy.request({
       method: "POST",
-      url: "http://atlasdev.eastus2.cloudapp.azure.com/api/v1/user/login",
+      url: Cypress.env("LOGIN_API_QA"),
       failOnStatusCode: false,
       body: {
         username: "admin9999",
