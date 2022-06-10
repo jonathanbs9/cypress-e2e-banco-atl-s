@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="3.1760" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-06-06T23:39:21" tests="0" file="cypress/integration/atlas-login.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Should enter Login Page" timestamp="2022-06-06T23:39:21" tests="1" time="3.1570" failures="0">
+    <testcase name="Should enter Login Page Should Not Login with Wrong credentials - API" time="3.1470" classname="Should Not Login with Wrong credentials - API">
+    </testcase>
+  </testsuite>
+</testsuites>
