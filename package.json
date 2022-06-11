@@ -9,7 +9,7 @@
     "cypress:run": "npx cypress run",
     "cypress:run:example": "cypress run --spec cypress/e2e/2-advanced-examples/network_requests.cy.js",
     "npx:example": "npx cypress run --spec cypress/e2e/2-advanced-examples/network_requests.cy.js",
-    "test:login": "npx cypress run --spec cypress/e2e/atlas-login.cy.js --env USERNAME=$USERNAME, PASS=$PASS"
+    "test:login": "npx cypress run --spec cypress/e2e/atlas-login.cy.js --env USERNAME=$CYPRESS_USERNAME, PASS=$CYPRESS_PASS"
   },
   "repository": {
     "type": "git",
