@@ -1,9 +1,9 @@
 require("cypress-xpath");
 
 export class Login {
-  navigate() {
-    cy.visit(Cypress.env("LOGIN_URL_QA"));
-  }
+  //navigate() {
+  //  cy.visit(Cypress.env("LOGIN_URL_QA"));
+  //}
 
   login(userName, password) {
     this.getUsernameInput.type(userName);
