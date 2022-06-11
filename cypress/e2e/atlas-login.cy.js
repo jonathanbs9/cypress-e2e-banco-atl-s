@@ -7,8 +7,8 @@ const spa = new Spa();
 
 describe("Should enter Login Page", () => {
   beforeEach("Navigate to login page", () => {
-    //login.navigate();
-    cy.visit(Cypress.env("LOGIN_URL_QA"));
+    login.navigate();
+
     const username = Cypress.env("USERNAME");
     const password = Cypress.env("PASS");
     //login.login(username, password);
