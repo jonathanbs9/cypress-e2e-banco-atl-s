@@ -8,8 +8,8 @@ const spa = new Spa();
 describe("Should enter Login Page", () => {
   beforeEach("Navigate to login page", () => {
     login.navigate();
-    const username = Cypress.env("USERNAME_DEV");
-    const password = Cypress.env("PASS_DEV");
+    const username = Cypress.env("USERNAME");
+    const password = Cypress.env("PASS");
     //login.login(username, password);
     cy.Login(username, password);
   });
@@ -19,16 +19,16 @@ describe("Should enter Login Page", () => {
     spa.getCTATitle.should("contain", "CTAs");
   });
 
-  it.only("Should Logout Successfully", () => {
+  it("Should Logout Successfully", () => {
     spa.clickAvatarAndLogout();
-    login.getURL.should("eq", Cypress.env("LOGIN_URL_QA") + "login");
+    login.getURL.should("eq", Cypress.env("LOGIN_URL") + "login");
     login.getTitlePageText.should("contains", "Ingresar | ");
   });
 
   it("Should Not Login with Wrong credentials - API", () => {
     cy.request({
       method: "POST",
-      url: Cypress.env("LOGIN_API_QA"),
+      url: Cypress.env("LOGIN_API"),
       failOnStatusCode: false,
       body: {
         username: "admin9999",
