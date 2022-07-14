@@ -2,7 +2,7 @@ require("cypress-xpath");
 
 export class Login {
   navigate() {
-    cy.visit(Cypress.env("LOGIN_URL"));
+    cy.visit(Cypress.env("LOGIN_URL_DEV"));
   }
 
   login(userName, password) {
@@ -13,9 +13,7 @@ export class Login {
   }
 
   get getUsernameInput() {
-    return cy.xpath(
-      "//input[@type='text'][@class='MuiInputBase-input MuiInput-input']"
-    );
+    return cy.xpath("//input[@type='text']");
   }
 
   get getPasswordInput() {

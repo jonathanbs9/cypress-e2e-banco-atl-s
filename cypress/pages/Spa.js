@@ -17,6 +17,10 @@ export class Spa {
     return cy.xpath("//span[contains(text(),'Cerrar Sesión')]");
   }
 
+  get getClientButton() {
+    return cy.xpath("//a[@href='/clientes']");
+  }
+
   navigate() {
     cy.visit(URL_LOGIN);
   }
@@ -24,5 +28,13 @@ export class Spa {
   clickAvatarAndLogout() {
     this.getAvatarImg.click();
     this.getLogOutSpan.click();
+  }
+
+  clickSearch() {
+    cy.xpath("//input[@class='prompt']").click();
+  }
+
+  typeSearch(client) {
+    cy.xpath("//input[@class='prompt']").type(client);
   }
 }

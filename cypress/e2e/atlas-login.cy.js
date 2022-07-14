@@ -1,9 +1,13 @@
 /// <reference types='Cypress' />
+import { Client } from "../pages/Clients";
+import { FMC } from "../pages/FMC";
 import { Login } from "../pages/Login";
 import { Spa } from "../pages/Spa";
 
 const login = new Login();
 const spa = new Spa();
+const client = new Client();
+const fmc = new FMC();
 
 describe("Should enter Login Page", () => {
   beforeEach("Navigate to login page", () => {
@@ -15,14 +19,16 @@ describe("Should enter Login Page", () => {
     cy.Login(username, password);
   });
 
-  it.only("Should Login Successfully", () => {
+  it("Should Login Successfully", () => {
     spa.getAgendaTitle.should("contain", "Agenda");
     spa.getCTATitle.should("contain", "CTAs");
+    //spa.getAvatarImg.click();
+    spa.clickAvatarAndLogout();
   });
 
   it("Should Logout Successfully", () => {
     spa.clickAvatarAndLogout();
-    login.getURL.should("eq", Cypress.env("LOGIN_URL") + "login");
+    login.getURL.should("eq", Cypress.env("LOGIN_URL_DEV") + "login");
     login.getTitlePageText.should("contains", "Ingresar | ");
   });
 
@@ -47,5 +53,29 @@ describe("Should enter Login Page", () => {
         "*User Service*. Invalid Request Exception"
       );
     });
+  });
+
+  it("Should have 44 filters", () => {
+    spa.getClientButton.click();
+    cy.wait(6000);
+    client.getFilters.should("have.length", 88);
+  });
+
+  it("Should Have 5 KPY", () => {
+    spa.getClientButton.click();
+    cy.wait(6000);
+    client.getKpis.should("have.length", 5);
+  });
+
+  it.only("Search Rodolfo Teodoro Fiegelist Nielsen", () => {
+    spa.clickSearch();
+    spa.typeSearch("Rodolfo Teodoro");
+
+    cy.xpath(
+      "//div[@firstname='RODOLFO TEODORO'][@lastname='FIEGELIST NIELSEN']"
+    ).click();
+
+    fmc.getConsultaButonModal.click();
+    fmc.getSiButton.click;
   });
 });
